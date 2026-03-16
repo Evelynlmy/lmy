@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邮轮预订系统 · 交互原型</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #0057A8;
+    --secondary: #00A3C4;
+    --accent: #F5A623;
+    --success: #27AE60;
+    --error: #EB5757;
+    --text-primary: #1A1A2E;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border: #EBEBEB;
+    --bg: #F7F8FA;
+    --white: #FFFFFF;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  body {
+    font-family: -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    background: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .hub-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .hub-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .flow-hint {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+  .screens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .screen-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 20px 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .screen-card:hover {
+    background: rgba(0,87,168,0.3);
+    border-color: var(--secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,163,196,0.25);
+  }
+  .screen-icon { font-size: 32px; }
+  .screen-num {
+    font-size: 10px;
+    color: var(--secondary);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .screen-name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .screen-desc {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .open-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .full-demo-btn {
+    margin: 0 auto 20px;
+    display: block;
+    background: linear-gradient(135deg, #F5A623, #f07b0f);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .full-demo-btn:hover { transform: scale(1.04); }
+</style>
+</head>
+<body>
+<div class="hub-title">🚢 邮轮预订系统 · 交互原型</div>
+<div class="hub-sub">C端完整链路 · 10个核心页面 · 带完整交互</div>
+<a class="full-demo-btn" href="prototype.html" target="_blank">▶ 打开完整交互原型</a>
+<div class="flow-hint">流程：首页 → 搜索 → 产品详情 → 选舱型 → 甲板选房 → 下单支付 → 成团通知 → 行前履约 → 评价</div>
+<div class="screens-grid">
+  <a class="screen-card" href="prototype.html#home" target="_blank">
+    <div class="screen-icon">🏠</div>
+    <div class="screen-num">Screen 01</div>
+    <div class="screen-name">首页</div>
+    <div class="screen-desc">Banner轮播<br>搜索入口<br>热门路线</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#search" target="_blank">
+    <div class="screen-icon">🔍</div>
+    <div class="screen-num">Screen 02</div>
+    <div class="screen-name">搜索条件</div>
+    <div class="screen-desc">出发港选择<br>日历组件<br>人数选择</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#results" target="_blank">
+    <div class="screen-icon">📋</div>
+    <div class="screen-num">Screen 03</div>
+    <div class="screen-name">搜索结果</div>
+    <div class="screen-desc">产品卡片列表<br>筛选面板<br>排序切换</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#detail" target="_blank">
+    <div class="screen-icon">🛳️</div>
+    <div class="screen-num">Screen 04</div>
+    <div class="screen-name">产品详情</div>
+    <div class="screen-desc">图片画廊<br>行程时间轴<br>舱型/评价</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#cabin" target="_blank">
+    <div class="screen-icon">🛏️</div>
+    <div class="screen-num">Screen 05</div>
+    <div class="screen-name">选舱型</div>
+    <div class="screen-desc">舱型对比<br>套餐选择<br>价格矩阵</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#deck" target="_blank">
+    <div class="screen-icon">🗺️</div>
+    <div class="screen-num">Screen 06</div>
+    <div class="screen-name">甲板选房</div>
+    <div class="screen-desc">可视化平面图<br>楼层切换<br>房间属性</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#passenger" target="_blank">
+    <div class="screen-icon">👥</div>
+    <div class="screen-num">Screen 07</div>
+    <div class="screen-name">乘客信息</div>
+    <div class="screen-desc">证件填写<br>表单验证<br>保险选择</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#payment" target="_blank">
+    <div class="screen-icon">💳</div>
+    <div class="screen-num">Screen 08</div>
+    <div class="screen-name">下单支付</div>
+    <div class="screen-desc">费用明细<br>多种支付<br>倒计时</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#fulfillment" target="_blank">
+    <div class="screen-icon">📅</div>
+    <div class="screen-num">Screen 09</div>
+    <div class="screen-name">履约链路</div>
+    <div class="screen-desc">成团进度<br>行前提醒<br>订单详情</div>
+    <button class="open-btn">查看</button>
+  </a>
+  <a class="screen-card" href="prototype.html#review" target="_blank">
+    <div class="screen-icon">⭐</div>
+    <div class="screen-num">Screen 10</div>
+    <div class="screen-name">评价反馈</div>
+    <div class="screen-desc">评分组件<br>图文上传<br>积分奖励</div>
+    <button class="open-btn">查看</button>
+  </a>
+</div>
+</body>
+</html>
